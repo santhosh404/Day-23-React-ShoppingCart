@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Flip, toast } from 'react-toastify';
 
 export default function ProductCard({ product, setCount }) {
 
@@ -12,6 +13,9 @@ export default function ProductCard({ product, setCount }) {
         else {
             setCount(prev => prev + 1);
             setIsProductAdded(true);
+            toast.success('Product added to cart!', {
+                transition: Flip
+            });
         }
     }
 
@@ -19,6 +23,12 @@ export default function ProductCard({ product, setCount }) {
         <>
             <div className="col mb-5">
                 <div className="card h-100">
+
+                    {/* Product Tag */}
+                    {
+
+                        product.isDiscount && <div className="badge bg-dark text-white position-absolute" style={{ top: "0.5rem", right: "0.5rem", fontSize: "12px" }}>Sale</div>
+                    }
 
                     {/* Product image */}
                     <img className="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
@@ -55,8 +65,8 @@ export default function ProductCard({ product, setCount }) {
                     <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         {
 
-                            product.quantity === 0 ? <div className="text-center"><a className="btn btn-outline-dark mt-auto" ><i class="fa-solid fa-eye"></i> View options</a></div> :
-                                <div className="text-center"><a className={`btn ${isProductAdded ? 'btn-outline-danger' : 'btn-outline-dark'}  mt-auto`} onClick={handleOnClick}>{isProductAdded ?  <><i className="fa-solid fa-trash"></i> Remove From Cart</> : <> <i className="fa-solid fa-cart-shopping"></i> Add to Cart</>}</a></div>
+                            product.quantity === 0 ? <div className="text-center"><a className="btn btn-outline-dark mt-auto" ><i className="fa-solid fa-eye"></i> View options</a></div> :
+                                <div className="text-center"><a className={`btn ${isProductAdded ? 'btn-outline-danger' : 'btn-outline-dark'}  mt-auto`} onClick={handleOnClick}>{isProductAdded ? <><i className="fa-solid fa-trash"></i> Remove From Cart</> : <> <i className="fa-solid fa-cart-shopping"></i> Add to Cart</>}</a></div>
                         }
 
                     </div>
