@@ -1,8 +1,11 @@
-# React + Vite
+# React Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the Simple E-commerce website with single product page, With add to cart and remove from cart feature alone
 
-Currently, two official plugins are available:
+### Documentation
+Click Add to button to add the product to cart, and you can see that product count in cart should get increase.<br>
+Once product is added to cart, Remove from cart button is enabled and you can remove the added product and product count in cart should decrease.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+***Please find the deployed url below***
+
+https://reactshoppingcart-demo.netlify.app/
